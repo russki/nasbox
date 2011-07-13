@@ -1,3 +1,6 @@
 Basic README for nasbox
 Test in this directory by running [sudo] ./test/run.sh [noop|reallyrun]
 
+Configures Samba, Zeroconf, Users
+
+Look in var_dev/main.yml for an example configuration
