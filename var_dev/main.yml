@@ -1,0 +1,39 @@
+---
+samba:
+  shares:
+    Data:
+      path: /srv/data
+      guest ok: yes
+      read only: no
+      comment: Data
+    Time_Machine_Tyler:
+      path: /srv/backups/Time_Masheen/TM-Tyler
+      valid users: tyler
+      read only: no
+      comment: Time Machine Tyler
+    Time_Machine_Marla:
+      path: /srv/backups/Time_Masheen/Time_Machine_Marla
+      valid users: marla
+      read only: no
+      comment: Time Machine Marla
+users:
+  tyler:
+    uid: 5000
+    gid: 5000
+    groups:
+      - users
+      - sambashare
+      - sudo
+      - admin
+    password: mayhem
+    shell: /bin/bash
+  marla:
+    uid: 5001
+    gid: 5001
+    groups:
+      - users
+      - sambashare
+    password: freecoffee
+    shell: /bin/true
+hdparm:
+  spindown: 240
